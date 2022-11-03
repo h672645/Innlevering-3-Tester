@@ -126,4 +126,49 @@ public class TestBlogg {
 		assertEquals(str,samling.toString());
 		
 	}
+	
+//	@Test
+//	public void leggTilUtvid() {
+//		Blogg samling = new Blogg(2);
+//		
+//		TInnlegg innlegg1 = new TInnlegg(1,"Ole Olsen","23-10");
+//		TInnlegg innlegg2 = new TInnlegg(2,"Oline Olsen","24-10");
+//
+//		samling.leggTil(innlegg1);
+//		samling.leggTil(innlegg2);
+//		
+//		assertEquals(samling.getAntall(),2);
+//		assertFalse(samling.ledigPlass());
+//		
+//		samling.utvid();
+//		
+//		assertTrue(samling.finnes(innlegg1));
+//		assertTrue(samling.finnes(innlegg2));
+//		assertEquals(samling.getAntall(),2);
+//		assertTrue(samling.ledigPlass());	
+//		
+//		
+//	}
+	
+	@Test
+	public void leggTilUtvid() {
+		Blogg samling = new Blogg(40);
+		
+		TInnlegg innlegg1 = new TInnlegg(1,"Ole Olsen","23-10");
+		TInnlegg innlegg2 = new TInnlegg(2,"Oline Olsen","24-10");
+		TInnlegg innlegg3 = new TInnlegg(3,"Oda Olsen","24-10");
+		
+		assertTrue(samling.leggTil(innlegg1));
+		assertTrue(samling.leggTil(innlegg2));
+		
+		assertEquals(samling.getAntall(),2);
+		
+		assertTrue(samling.finnInnlegg(innlegg1) >= 0);
+		assertTrue(samling.finnInnlegg(innlegg3) < 0);
+		
+		assertTrue(samling.finnes(innlegg1));
+		assertTrue(samling.finnes(innlegg2));
+		assertFalse(samling.finnes(innlegg3));
+		
+	}
 }
