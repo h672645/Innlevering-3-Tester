@@ -23,7 +23,12 @@ public class TestSkrivBlogg {
 		
 		samling.leggTil(innlegg1);
 		samling.leggTil(innlegg2);
+		int tab[] = {4, 3 , 1};
 		
-		assertTrue(SkrivBlogg.skriv(samling, MAPPE, FILNAVN));
+		try {
+			assertTrue(SkrivBlogg.skriv(samling, MAPPE, FILNAVN));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}	
 }

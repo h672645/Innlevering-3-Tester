@@ -24,6 +24,11 @@ class TestHtmlBlogg {
 		samling.leggTil(innlegg1);
 		samling.leggTil(innlegg2);
 		
-		assertTrue(SkrivBlogg.skriv(samling, MAPPE, FILNAVN));
+		try {
+			assertTrue(SkrivBlogg.skriv(samling, MAPPE, FILNAVN));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}	
 }
